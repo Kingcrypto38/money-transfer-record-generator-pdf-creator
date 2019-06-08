@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <div class="content">
+    <div class="statement-date-row">
+      <div class="statement-number">
+        رقم الكشف : <strong>{{ statementNumber }}</strong>
+      </div>
+      <div class="date">
+        {{ date }}
+      </div>
+    </div>
+    <table class="table table-bordered">
+      <thead align="center">
+        <tr>
+          <th scope="col" style="width: 15%">رقم الحوالة</th>
+          <th scope="col" style="width: 15%">المبلغ</th>
+          <th scope="col" style="width: 35%">اسم المستفيد</th>
+          <th scope="col" style="width: 20%">المرسل</th>
+          <th scope="col" style="width: 20%">المكان</th>
+        </tr>
+      </thead>
+      <tbody align="right">
+        {% for transaction in transactions %}
+          <tr>
+            <td scope="row">{{ transaction.transactionNumber }}</td>
+            <td>{{ transaction.amount }}</td>
+            <td>{{ transaction.benefitiaryName }}</td>
+            <td>{{ transaction.senderName }}</td>
+            <td>{{ transaction.place }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

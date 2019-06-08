@@ -1,0 +1,6 @@
+/__pycache__
+
+# OS X
+**.DS_Store
+
+/__test__.py
