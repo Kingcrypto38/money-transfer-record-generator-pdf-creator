@@ -9,7 +9,7 @@
 
   <body dir="rtl">
     <header>
-      <div alt="Header image" class="header-image"></div>
+      <img src='{{ url_for("static", filename="images/header.jpg", _external=True) }}' alt="Header image" class="header-image"></div>
     </header>
     <div class="container">
       {% block content %}
