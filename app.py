@@ -1,9 +1,7 @@
 from os import getenv
-from dotenv import load_dotenv
 from flask import Flask, make_response, send_file, render_template, request, abort
 import pdfkit
 
-load_dotenv()
 app = Flask(__name__)
 
 @app.route("/pdf", methods=["POST"])
